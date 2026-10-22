@@ -1,0 +1,31 @@
+ACATIANGUIS — CONEXIÓN PREPARADA
+22 de octubre de 2026
+
+Este paquete corrige config.js con la URL y la clave publicable del proyecto
+de Supabase "Corre a Clase Acatlán". También incluye schema.sql, que faltaba
+en el paquete anterior.
+
+ESTADO
+La configuración de los archivos está preparada. Las tablas y los permisos
+de Acatianguis todavía NO se han creado en Supabase: está pendiente tu autorización.
+La aplicación seguirá sin poder consultar o publicar anuncios hasta aplicar el esquema.
+
+CAMBIOS PREPARADOS EN SUPABASE
+- Perfiles públicos (apodo, carrera y descripción).
+- Contactos privados, con WhatsApp público sólo cuando su propietario lo activa.
+- Anuncios que cualquiera puede leer y sólo su propietario puede modificar.
+- Fotografías de productos, con escritura limitada a la carpeta del propietario.
+- Reglas de acceso y funciones para sincronizar las preferencias de contacto.
+
+ARCHIVOS PARA GITHUB
+Después de autorizar y completar la configuración de Supabase, extrae el ZIP
+y reemplaza index.html, app.js, config.js, manifest.webmanifest y sw.js en la
+misma carpeta donde está el index.html actual. Se suben los archivos extraídos.
+schema.sql y este texto son documentación y no son necesarios para mostrar la web.
+
+La sesión del tianguis usa su propia clave de almacenamiento en el navegador.
+El esquema preparado no modifica las tablas existentes del juego.
+config.js contiene una clave publicable; no debe contener claves secretas.
+
+La creación y confirmación de cuentas por correo requiere comprobar los
+ajustes de autenticación y la URL de retorno de la web al completar la conexión.

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#E86F4B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Acatianguis">
+  <meta name="description" content="¡Pásele! Comida, trueques, libros y hallazgos de la comunidad de Acatlán. Proyecto estudiantil independiente.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <title>Acatianguis · Mercado universitario compartido</title>
+  <style>
+    :root{--navy:#172c49;--navy2:#244365;--gold:#f3c663;--bg:#f7f7f3;--ink:#192b3d;--muted:#657384;--line:#e5e8eb;--mint:#deeee6;--green:#216851;--white:#fff;--shadow:0 7px 24px rgba(24,45,69,.065)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#e6e9ea;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);font-size:14px}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.5}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #be953e;outline-offset:2px}
+    .app{max-width:530px;min-height:100dvh;background:var(--bg);margin:auto;box-shadow:0 0 40px #24324720;padding-bottom:calc(95px + env(safe-area-inset-bottom));position:relative}.top{background:var(--navy);color:#fff;border-radius:0 0 30px 30px;padding:calc(19px + env(safe-area-inset-top)) 20px 26px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{display:flex;gap:10px;align-items:center}.logo{height:43px;width:43px;flex:none;display:grid;place-items:center;font-size:23px;background:var(--gold);color:var(--navy);border-radius:14px;font-weight:900;box-shadow:inset 0 -3px 0 #ae7f2640}.brand small{font-size:10px;letter-spacing:1.2px;color:#e9ce87;font-weight:800;text-transform:uppercase}.brand strong{font-size:20px;letter-spacing:-.8px;display:block;line-height:1.2}.profile-button{border:1px solid #8191a688;background:#ffffff17;color:white;border-radius:16px;padding:9px 12px;white-space:nowrap;font-size:12px;font-weight:800}.topcopy{margin:23px 0 0}.topcopy h1{font-size:25px;line-height:1.16;letter-spacing:-.9px;margin:0 0 8px}.topcopy p{margin:0;color:#d7e2ec;line-height:1.55;font-size:12px;max-width:380px}.demo-marker{display:inline-flex;align-items:center;gap:6px;color:#7a581d;background:#fff1c5;border-radius:99px;padding:6px 10px;font-weight:800;font-size:10px;letter-spacing:.15px}.top .demo-marker{margin-top:13px}
+    .content{padding:18px 17px 5px}.screen{display:none;animation:fade .18s ease}.screen.active{display:block}@keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.section-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0 13px}.section-heading h2{font-size:19px;letter-spacing:-.5px;margin:0}.eyebrow{font-size:11px;letter-spacing:1.1px;text-transform:uppercase;font-weight:850;color:#86632a}.sub{font-size:12px;color:var(--muted);line-height:1.5}.stat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:12px 9px;box-shadow:var(--shadow)}.stat strong{display:block;font-size:21px;color:var(--navy);font-variant-numeric:tabular-nums}.stat span{font-size:10px;color:var(--muted)}.highlight{background:#f9e6ad;border-radius:20px;padding:18px;display:flex;gap:13px;align-items:center;margin-bottom:19px}.highlight .illustration{font-size:38px}.highlight strong{font-size:16px;display:block}.highlight p{font-size:12px;line-height:1.4;margin:5px 0 10px;color:#594723}.quickgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:0 0 21px}.quick{background:#fff;border:1px solid var(--line);border-radius:17px;padding:16px 14px;text-align:left;box-shadow:var(--shadow);min-height:135px;color:var(--ink)}.quick .big{font-size:28px}.quick strong{display:block;font-size:15px;margin-top:9px}.quick span:last-child{display:block;color:var(--muted);font-size:11px;line-height:1.4;margin-top:3px}.card{background:white;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:17px;padding:15px}.notice{font-size:11px;line-height:1.5;color:#44566b;background:#e9eff5;border:1px solid #dbe5ee;padding:12px;border-radius:13px;margin-bottom:14px}.notice.safe{color:#2d5949;background:#e9f4ee;border-color:#d6e8df}.btn{background:var(--navy);color:white;border:0;border-radius:12px;padding:11px 15px;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px}.btn.secondary{background:white;color:var(--navy);border:1px solid #c8d3dc}.btn.gold{background:var(--gold);color:#34270f}.btn.ghost{background:#eaf0f5;color:var(--navy)}.btn.danger{background:#fce8e8;color:#a52b2b}.btn.small{min-height:32px;padding:7px 10px;font-size:11px}.btn.full{width:100%}.btnrow{display:flex;gap:8px;flex-wrap:wrap}.toolbar{display:flex;gap:7px;overflow-x:auto;margin:13px 0 14px;padding:0 0 4px;scrollbar-width:none}.toolbar::-webkit-scrollbar{display:none}.chip{flex:none;border:1px solid #d8e0e7;background:#fff;border-radius:99px;color:#526274;padding:9px 12px;font-weight:700;font-size:11px}.chip.active{background:var(--navy);color:white;border-color:var(--navy)}.search-wrap{display:flex;align-items:center;gap:8px;border:1px solid #d8dfe5;background:#fff;border-radius:14px;padding:0 12px}.search-wrap span{font-size:17px;color:var(--muted)}.search-wrap input{border:0;outline:none;min-width:0;flex:1;padding:13px 0;background:transparent;color:var(--ink);font-size:13px}.search-wrap:focus-within{outline:2px solid #edc467}.list{display:grid;gap:11px}.item{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:17px;padding:14px;display:flex;gap:12px;align-items:flex-start}.item-icon{width:59px;height:62px;background:#f2f4f5;border-radius:14px;font-size:29px;display:grid;place-items:center;flex:none}.item-content{flex:1;min-width:0}.item h3{font-size:14px;margin:0 0 5px;line-height:1.35;overflow-wrap:anywhere}.item p{font-size:11px;line-height:1.5;margin:0 0 8px;color:var(--muted);overflow-wrap:anywhere}.item-top{display:flex;gap:6px;justify-content:space-between;align-items:flex-start}.price{font-size:16px;font-weight:850;color:var(--green)}.pill{font-size:10px;border-radius:99px;background:#edf1f4;color:#576579;font-weight:700;padding:5px 8px;display:inline-block}.pill.green{background:#e2f3e9;color:var(--green)}.tiny{font-size:10px;color:var(--muted)}.item-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:9px}.muted{color:var(--muted)}.empty{text-align:center;padding:28px 12px;color:var(--muted);background:#fff;border-radius:14px;border:1px dashed #d4dbe2}.empty strong{display:block;color:var(--navy);margin:7px 0}.link{border:0;background:none;padding:4px 0;color:#1e5888;font-size:12px;text-decoration:underline}.map{height:390px;position:relative;overflow:hidden;border-radius:20px;border:1px solid #c8d5cb;background:repeating-linear-gradient(0deg,transparent 0 38px,#dce5d9 39px 40px),repeating-linear-gradient(90deg,#eaf0e5 0 38px,#dce5d9 39px 40px)}.path{position:absolute;background:#dbcdb7;border:2px solid #c7b69c;border-radius:30px}.path.horizontal{left:6%;right:6%;top:48%;height:34px}.path.vertical{top:7%;bottom:7%;left:47%;width:33px}.pin{position:absolute;border:2px solid #fff;background:#234b71;color:white;border-radius:12px;padding:8px;font-size:10px;font-weight:800;line-height:1.15;box-shadow:0 3px 10px #0003;max-width:110px}.pin.selected{background:var(--gold);color:#252e35}.pin:active{transform:scale(.97)}.map-detail{margin-top:13px;min-height:100px}.tabs{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:530px;z-index:10;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:10px 5px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -5px 20px #152b3c13}.tab{border:0;background:transparent;display:grid;justify-items:center;gap:4px;color:#6d7887;font-size:10px;padding:3px 1px}.tab span{font-size:22px}.tab.active{color:#142f50;font-weight:850}.footer{text-align:center;font-size:10px;color:#7a8490;line-height:1.6;margin:27px 8px 4px}.modal{position:fixed;inset:0;background:#0c1e31aa;z-index:30;display:none;align-items:flex-end;justify-content:center;padding:0}.modal.show{display:flex}.dialog{width:100%;max-width:530px;max-height:94dvh;background:var(--bg);border-radius:23px 23px 0 0;overflow-y:auto;padding:21px 19px calc(22px + env(safe-area-inset-bottom));box-shadow:0 -10px 35px #0002}.dialog-header{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:12px}.dialog-header h2{margin:0;font-size:21px;letter-spacing:-.5px}.close{border:0;background:#e7ecf0;border-radius:12px;padding:7px 12px;font-size:19px;color:var(--ink)}.form{display:grid;gap:13px}.field{display:grid;gap:5px}.field label{font-size:12px;font-weight:800}.field input,.field select,.field textarea{width:100%;min-width:0;min-height:44px;padding:11px 12px;border:1px solid #d0d9e1;border-radius:12px;background:#fff;color:var(--ink);font-size:13px}.field textarea{resize:vertical;min-height:91px}.checkline{display:flex;gap:8px;align-items:flex-start;line-height:1.4;font-size:11px;color:var(--muted)}.checkline input{margin-top:2px}.checkline label{cursor:pointer}.success-toast{position:fixed;z-index:50;left:50%;bottom:calc(100px + env(safe-area-inset-bottom));transform:translate(-50%,10px);background:#1b4d3d;color:white;border-radius:14px;padding:12px 18px;max-width:calc(100% - 30px);box-shadow:0 9px 25px #0003;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;text-align:center;font-size:12px}.success-toast.show{transform:translate(-50%,0);opacity:1}.profilerow{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px;margin-bottom:15px}.avatar{border-radius:14px;background:#e4ebf2;color:var(--navy);padding:12px;font-weight:900;font-size:18px}.hint{font-size:11px;color:var(--muted);line-height:1.5}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}#account{font-variant-numeric:tabular-nums}
+    @media(min-width:650px){.app{margin:22px auto;min-height:calc(100dvh - 44px);border-radius:25px;overflow:hidden}.top{padding-top:26px}.tabs{bottom:22px;border-radius:0 0 25px 25px}.modal{align-items:center;padding:16px}.dialog{border-radius:23px;max-height:88dvh}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  
+/* ACATIANGUIS / IDENTIDAD 3.0: cálido, informal y hecho para universitarios */
+:root{--navy:#24594e;--navy2:#2c7467;--gold:#fbd67e;--bg:#fff9ec;--ink:#233a35;--muted:#6f766d;--line:#e9ddc8;--mint:#e9f2dc;--green:#246f57;--white:#fffdf8;--shadow:0 5px 0 #d9bda746,0 10px 22px #8e664320;--coral:#e86f4b;--coral-dark:#bd4836;--paper:#fff4d4}
+body{background:#dfd0b9;font-family:'Trebuchet MS',system-ui,-apple-system,sans-serif;color:var(--ink)}
+.app{background:var(--bg);box-shadow:0 0 34px #6f533825}
+.top{position:relative;background:var(--coral);border-radius:0 0 25px 25px;padding:calc(21px + env(safe-area-inset-top)) 19px 37px;overflow:hidden;isolation:isolate}
+.top:before{content:'✦';position:absolute;right:25px;top:90px;font-size:66px;line-height:1;color:#f5ba8b66;transform:rotate(-12deg);z-index:-1}
+.top:after{content:'';position:absolute;bottom:0;left:0;width:100%;height:16px;background:repeating-linear-gradient(90deg,#fff0d0 0px,#fff0d0 19px,#24594e 19px,#24594e 38px);border-radius:10px 10px 0 0}
+.brand{gap:10px}.logo{width:50px;height:50px;background:#fff1c6;border:2px solid #304c43;border-radius:15px;box-shadow:4px 4px 0 #b54b3a}.logo svg{width:41px;height:41px}
+.brand small{color:#ffe8ca;letter-spacing:1.7px;font-size:9px}
+.brand strong{color:#fffefa;font-size:25px;letter-spacing:-1.2px;line-height:1.09}
+.profile-button{background:#fff9e6;color:var(--ink);border:2px solid #d7603f;border-radius:99px;box-shadow:3px 3px 0 #a94e37;padding:10px 12px;font-size:11px}
+.topcopy{margin-top:28px}.topcopy h1{font-size:32px;line-height:1.05;letter-spacing:-1.35px;max-width:330px;font-weight:1000;color:#fffdf5;text-shadow:0 2px 0 #b7543977}.topcopy p{color:#fff3df;font-size:12px;max-width:300px;line-height:1.6;margin-top:10px}
+.demo-marker{background:#fff5db;color:#7a4e30;border:1px dashed #ca845b;border-radius:7px;padding:7px 9px;font-size:9px;letter-spacing:.6px;transform:rotate(-1deg)}
+.content{padding:21px 17px 6px}.eyebrow{color:var(--coral-dark)}.section-heading h2{font-size:22px;letter-spacing:-.65px;color:var(--ink)}
+.highlight{background:#ffe29c;border:2px solid #3b5149;border-radius:20px;box-shadow:5px 5px 0 #ecd29a;padding:19px 14px;gap:12px;position:relative;overflow:visible}.highlight:before{content:'LA NETA';position:absolute;right:13px;top:-12px;background:#255c50;color:#fff7dc;letter-spacing:1.4px;font-size:9px;font-weight:900;padding:6px 9px;border-radius:3px;transform:rotate(5deg)}
+.highlight .illustration{width:70px;height:70px;flex:none;border-radius:15px;background:#fff8dc;display:grid;place-items:center;font-size:36px;border:2px dashed #df9858;transform:rotate(-5deg)}.highlight strong{font-size:18px;letter-spacing:-.3px}.highlight p{color:#59482a}
+.barrio-strip{display:flex;justify-content:center;align-items:center;gap:9px;flex-wrap:wrap;margin:20px 0 14px;font-size:10px;font-weight:850;color:#8f6047;letter-spacing:.2px;text-transform:uppercase}.asterisk{font-size:18px;color:var(--coral)}
+.stat-grid{gap:9px}.stat{background:#fffef7;border:1.5px solid #ead9ba;border-radius:11px;box-shadow:3px 4px 0 #f0dcc0}.stat strong{color:#d7553e;font-size:25px;font-weight:1000}.stat span{color:#6b766e;line-height:1.25;display:block;margin-top:2px}
+.quickgrid{gap:12px}.quick{background:#fceecb;border:2px solid #e8d3ac;border-radius:16px;box-shadow:4px 4px 0 #ebddbd;min-height:150px;position:relative;overflow:hidden;transition:transform .13s}.quick:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #ebddbd}.quick:nth-child(2){background:#e4f3df;border-color:#c4dfc6;box-shadow:4px 4px 0 #bddabd}.quick:nth-child(3){background:#fee0d4;border-color:#f6c4b1;box-shadow:4px 4px 0 #f1cabf}.quick:nth-child(4){background:#e7e6f7;border-color:#d2d0ed;box-shadow:4px 4px 0 #d6d1e9}.quick .big{font-size:32px;filter:drop-shadow(1px 2px 0 #0001)}.quick strong{font-size:17px;color:#243d35}.quick span:last-child{font-size:11px;color:#59685d}
+.card,.item{background:#fffdf7;border:1.5px solid #eee0c9;border-radius:16px;box-shadow:3px 4px 0 #e8dcc8}.item-icon{background:#fff0d6;border:1px dashed #f0ce9c}.item h3{font-size:15px}.price{color:#cb513c;font-weight:1000}.pill{background:#fff0d5;color:#91623d}.pill.green{background:#e1f2d6;color:#2a694f}
+.btn{background:var(--green);border:1.5px solid #214c40;border-radius:10px;box-shadow:2px 3px 0 #244b3d40}.btn.gold{background:var(--coral);color:white;border-color:#a94431}.btn.secondary{color:var(--green);border-color:#c5d6ba}.btn.ghost{background:#e7eed7;color:var(--green)}
+.notice{background:#fff3da;border:1px dashed #dfa977;color:#70583c;border-radius:10px}.notice.safe{background:#e3efdf;border-color:#91bf9f}.chip{border:1.5px solid #e6d6b9;background:#fffefa;color:#6e715f}.chip.active{background:var(--coral);color:#fff;border-color:#c7573d}.search-wrap{background:#fffefa;border:1.5px solid #e2d5b8}.search-wrap:focus-within{outline:2px solid #efb772}.link{color:#ac4e36}
+.map{background:repeating-linear-gradient(0deg,transparent 0 36px,#e1e4cc 37px 38px),repeating-linear-gradient(90deg,#ebf1df 0 36px,#d4dbc4 37px 38px);border:2px solid #d9dbb4}.path{background:#f4cf9a;border-color:#d1af7c}.pin{background:#245e50;border-radius:9px}.pin.selected{background:#ffd479;color:#26382f}
+.tabs{background:#fffaf0;border-top:2px solid #e4d5b9;box-shadow:0 -5px 16px #7f5f3119;padding-top:12px}.tab{font-weight:700;color:#7e8174;gap:5px}.tab span{font-size:23px}.tab.active{color:#bc4f35;font-weight:1000}.tab.active:after{content:'';width:23px;height:4px;background:#ec815d;border-radius:9px;margin-top:1px}
+.footer{color:#857b6b}.dialog{background:#fff9ec}.close{background:#f3e5c9}.field input,.field select,.field textarea{background:#fffefa;border-color:#e1d0b6}.success-toast{background:#265f4c}.avatar{background:#f7da85;color:#37473b}
+@media (max-width:360px){.topcopy h1{font-size:28px}.brand strong{font-size:21px}.profile-button{padding:8px 9px;font-size:10px}.stat span{font-size:9px}.barrio-strip{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.screen{animation:none}.quick{transition:none}}
+
+
+/* Acatianguis v4: oferta y demanda */
+.market-action-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 19px}
+.market-option{border:2px solid #ecc99c;background:#fff0ce;text-align:left;padding:14px 12px;border-radius:16px;box-shadow:3px 4px 0 #e6d4b4;color:#244c42}
+.market-option:nth-child(2){background:#e3f0dd;border-color:#b8d4c2;box-shadow:3px 4px 0 #c2d8bf}
+.market-option span{font-size:25px;display:block;margin-bottom:7px}.market-option strong{font-size:13px;display:block;margin-bottom:4px}.market-option small{font-size:10px;line-height:1.35;display:block;color:#657565}
+.market-kind{font-weight:900;font-size:10px;border-radius:6px;padding:3px 6px;background:#fff0d1;color:#995a35}
+.market-kind.want{background:#dcece3;color:#275e49}.market-kind.sold{background:#efefeb;color:#656b67}
+.market-detail{display:flex;gap:7px;flex-wrap:wrap;margin:9px 0 5px}.seller-line{margin:8px 0 0;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.seller-link{background:none;border:0;padding:2px 0;font-weight:900;color:#24594e;text-decoration:underline;text-underline-offset:3px;font-size:11px}
+.listing-actions{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 1px}.listing-actions button{box-shadow:none}
+.item.product-post{align-items:flex-start}.product-post .item-icon{width:85px;height:94px;overflow:hidden;border-radius:13px}.product-post .item-icon img{height:100%;width:100%;object-fit:cover}
+.product-post .item-top{align-items:flex-start}.product-post .item-top h3{line-height:1.3}
+.field[hidden]{display:none!important}
+.photo-preview{background:#fff3dc;border:1px dashed #deb783;border-radius:13px;padding:9px;margin-top:4px}.photo-preview img{width:100%;max-height:170px;object-fit:contain;border-radius:10px}
+.profile-notice{background:#fff2d5;padding:12px;border-radius:13px;margin:8px 0 14px;font-size:12px;line-height:1.5}
+.whatsapp-action{background:#168753;color:#fff;text-decoration:none}.whatsapp-action[hidden]{display:none}.profile-contact{display:grid;gap:8px;margin:14px 0}.profile-contact .btn{width:100%}
+@media(max-width:365px){.product-post .item-icon{width:69px;height:79px}.market-option{padding:11px 9px}}
+
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="topbar"><div class="brand"><div class="logo" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 17 11 8h26l5 9" stroke="#243B36" stroke-width="3" stroke-linejoin="round"/><path d="M6 17q4 8 9 0 4 8 9 0 4 8 9 0 5 8 9 0" fill="#F8D886" stroke="#243B36" stroke-width="2.5" stroke-linejoin="round"/><path d="M10 21v17h28V21" stroke="#243B36" stroke-width="2.8" stroke-linecap="round"/><path d="M18 33l6-10 6 10m-10-3h8" stroke="#243B36" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><small>el tianguis de la banda</small><strong>Acatianguis</strong></div></div><button id="profile-btn" class="profile-button" type="button">👤 Mi perfil</button></div>
+      <div class="topcopy"><h1 id="welcome-title">¡Pásele, hay de todo!</h1><p id="welcome-subtitle">Comida, hallazgos y oportunidades. Todo entre la comunidad de Acatlán.</p><span class="demo-marker">☁️ Mercado compartido · Supabase</span></div>
+    </header>
+    <div class="content">
+      <section id="home" class="screen active" aria-label="Inicio">
+        <div class="highlight"><div class="illustration" aria-hidden="true">🛍️</div><div><strong>Lo bueno se comparte</strong><p>Un espacio para ofrecer, encontrar e intercambiar cosas entre estudiantes. ¡Aquí se compra y se vende!</p><button type="button" class="btn gold small" id="home-cta">Ver qué hay →</button></div></div>
+        <div class="barrio-strip" aria-label="Identidad del proyecto"><span class="asterisk">✳</span><span>De estudiante a estudiante</span><span class="asterisk">✳</span><span>Hecho para compartir</span></div>
+    <div class="stat-grid"><div class="stat"><strong id="total-food">4</strong><span>Opciones de comida*</span></div><div class="stat"><strong id="total-posts">3</strong><span>Artículos visibles*</span></div><div class="stat"><strong>5</strong><span>Puntos en el mapa*</span></div></div>
+        <div class="section-heading"><h2>Échale un ojo</h2></div>
+        <div class="quickgrid">
+          <button type="button" class="quick" data-go="food"><span class="big">🍲</span><strong>Comida</strong><span>Antojos para sobrevivir al semestre.</span></button>
+          <button type="button" class="quick" data-go="market"><span class="big">♻️</span><strong>Tianguis</strong><span>Compra, vende o publica lo que buscas.</span></button>
+          <button type="button" class="quick" data-go="map"><span class="big">🗺️</span><strong>Mapa</strong><span>Ubícate sin dar tanta vuelta.</span></button>
+          <button type="button" class="quick" id="profile-tile"><span class="big">🎓</span><strong>Mi perfil</strong><span>Tu espacio en el tianguis.</span></button>
+        </div>
+        <div class="section-heading"><h2>Destacado</h2><span class="pill green">Comunidad</span></div>
+        <div class="item"><div class="item-icon">📚</div><div class="item-content"><h3>Que tus libros sigan rodando</h3><p>¿Ya pasaste la materia? Sube tus artículos con foto, precio y estado. Alguien más puede necesitarlos.</p><button type="button" class="btn small" id="home-publish">Poner un puesto</button></div></div>
+      </section>
+      <section id="food" class="screen" aria-label="Comida">
+        <div class="section-heading"><h2>¿Qué se arma para comer?</h2><span class="pill">Demo</span></div>
+        <div class="notice">Establecimientos, menús y precios <strong>ficticios</strong>. No representan negocios verificados ni ofertas vigentes.</div>
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><span class="sr-only">Buscar comida</span><input id="food-search" type="search" placeholder="Buscar tacos, café, guisado..." autocomplete="off"></label>
+        <div class="toolbar" id="food-filters" role="group" aria-label="Filtrar comida"></div>
+        <div class="list" id="food-list"></div>
+      </section>
+      <section id="market" class="screen" aria-label="Mercado estudiantil">
+        <div class="section-heading"><h2>El tianguis</h2><button type="button" id="publish" class="btn small">＋ Poner anuncio</button></div>
+        <div class="notice" id="market-notice">🛍️ Publica lo que vendes o buscas. Cuando Supabase esté conectado, los anuncios y fotos se compartirán entre dispositivos.</div>
+        <div class="market-action-grid"><button class="market-option" id="market-sell" type="button"><span>📦</span><strong>Quiero vender</strong><small>Sube fotos, precio y detalles</small></button><button class="market-option" id="market-want" type="button"><span>🔎</span><strong>Estoy buscando</strong><small>Publica lo que necesitas</small></button></div>
+        <div class="section-heading"><h2>Artículos y solicitudes</h2><span class="pill green" id="market-count">Cargando...</span></div>
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><span class="sr-only">Buscar artículos</span><input id="market-search" type="search" placeholder="Buscar libros, calculadoras..." autocomplete="off"></label>
+        <div class="toolbar" id="market-filters" role="group" aria-label="Filtrar artículos"></div>
+        <div class="list" id="market-list"></div>
+      </section>
+      <section id="map" class="screen" aria-label="Mapa conceptual">
+        <div class="section-heading"><h2>Ubícate en Acatlán</h2><span class="pill">Esquema ilustrativo</span></div>
+        <div class="notice">Este es un <strong>mapa conceptual, no geográfico</strong>. La ubicación real de edificios y recorridos debe verificarse antes de publicarlo como mapa del campus.</div>
+        <div class="map" aria-label="Diagrama conceptual de edificios"><div class="path horizontal"></div><div class="path vertical"></div>
+          <button type="button" class="pin" data-pin="biblioteca" style="left:6%;top:10%">📚 Biblioteca</button>
+          <button type="button" class="pin" data-pin="teatro" style="right:5%;top:16%">🎭 Teatro</button>
+          <button type="button" class="pin" data-pin="cafeteria" style="left:5%;bottom:17%">☕ Cafetería</button>
+          <button type="button" class="pin" data-pin="deportes" style="right:5%;bottom:15%">⚽ Deportes</button>
+          <button type="button" class="pin" data-pin="centro" style="left:36%;top:40%">📍 Centro</button>
+        </div><div id="map-detail" class="card map-detail" aria-live="polite"><strong>Selecciona un punto</strong><p class="sub">Toca uno de los botones sobre el esquema para conocer su descripción.</p></div>
+      </section>
+      <div class="footer">*Conteos de demostración, no estadísticas de la FES.<br>Acatianguis es un proyecto independiente, no oficial ni avalado por la UNAM. Los anuncios y perfiles se alojan en Supabase. La comida y el mapa siguen siendo ilustrativos.</div>
+    </div>
+    <nav class="tabs" aria-label="Navegación principal">
+      <button type="button" class="tab active" data-go="home" aria-current="page"><span aria-hidden="true">⌂</span>Inicio</button>
+      <button type="button" class="tab" data-go="food"><span aria-hidden="true">🍽️</span>Comida</button>
+      <button type="button" class="tab" data-go="market"><span aria-hidden="true">🛍️</span>Tianguis</button>
+      <button type="button" class="tab" data-go="map"><span aria-hidden="true">🗺️</span>Mapa</button>
+    </nav>
+  </main>
+  <div class="modal" id="profile-modal" role="dialog" aria-modal="true" aria-labelledby="profile-heading" aria-hidden="true">
+    <div class="dialog"><div class="dialog-header"><div><div class="eyebrow">Cuenta estudiantil</div><h2 id="profile-heading">Mi puesto en Acatianguis</h2></div><button type="button" class="close" data-close="profile-modal" aria-label="Cerrar perfil">×</button></div>
+      <section id="auth-section">
+        <p class="hint">Crea una cuenta con correo y contraseña, o inicia sesión. No verificamos actualmente tu pertenencia a la UNAM.</p>
+        <div class="btnrow" style="margin-bottom:12px"><button type="button" class="btn small" id="mode-login">Iniciar sesión</button><button type="button" class="btn small secondary" id="mode-signup">Registrarme</button></div>
+        <form class="form" id="auth-form">
+          <div class="field"><label for="auth-email">Correo electrónico</label><input id="auth-email" type="email" autocomplete="email" required placeholder="correo@ejemplo.com"></div>
+          <div class="field"><label for="auth-password">Contraseña (mínimo 8 caracteres)</label><input id="auth-password" type="password" minlength="8" autocomplete="current-password" required></div>
+          <button class="btn full" type="submit" id="auth-submit">Iniciar sesión</button>
+        </form>
+        <p class="hint" id="auth-info">Tu correo se utiliza para iniciar sesión, nunca se muestra a otros usuarios.</p>
+      </section>
+      <section id="profile-section" hidden>
+        <div id="profile-summary" class="profilerow"></div>
+        <p class="hint">Perfil público: sólo tu apodo, carrera y descripción. WhatsApp opcional; si lo activas, el número será accesible mediante los enlaces de contacto de tus anuncios.</p>
+        <form id="profile-form" class="form">
+          <div class="field"><label for="alias">Nombre o apodo *</label><input id="alias" name="alias" maxlength="38" minlength="2" placeholder="Ej. Alex de Economía" required></div>
+          <div class="field"><label for="career">Carrera *</label><select id="career" required><option value="">Selecciona tu carrera</option><option>Actuaría</option><option>Arquitectura</option><option>Ciencias Políticas y Administración Pública</option><option>Comunicación</option><option>Derecho</option><option>Diseño Gráfico</option><option>Economía</option><option>Enseñanza de Inglés</option><option>Filosofía</option><option>Historia</option><option>Lengua y Literatura Hispánicas</option><option>Matemáticas Aplicadas y Computación</option><option>Pedagogía</option><option>Relaciones Internacionales</option><option>Sociología</option><option>Otra / por confirmar</option></select></div>
+          <div class="field"><label for="profile-bio">Sobre mí (opcional)</label><textarea id="profile-bio" maxlength="120" placeholder="Ej. Vendo libros de Economía."></textarea></div>
+          <div class="field"><label for="whatsapp-number">WhatsApp de contacto (opcional)</label><input id="whatsapp-number" type="tel" inputmode="numeric" maxlength="16" placeholder="10 dígitos de México" autocomplete="off"></div>
+          <label class="checkline"><input type="checkbox" id="whatsapp-enabled"><span>Autorizo publicar mi número en los enlaces de WhatsApp de mis anuncios. Sé que cualquiera que abra el enlace podrá conocerlo.</span></label>
+          <label class="checkline"><input type="checkbox" id="privacy" required><span>Acepto que mis datos de perfil y publicaciones se almacenen en la base de datos de este proyecto, sujeto al aviso de privacidad de Acatianguis.</span></label>
+          <button type="submit" class="btn full" id="profile-save">Guardar perfil</button>
+        </form>
+        <div style="height:10px"></div><button type="button" class="btn secondary full" id="sign-out">Cerrar sesión</button>
+      </section>
+    </div>
+  </div>
+  <div class="modal" id="post-modal" role="dialog" aria-modal="true" aria-labelledby="post-heading" aria-hidden="true">
+    <div class="dialog"><div class="dialog-header"><div><div class="eyebrow">Publicación compartida</div><h2 id="post-heading">Poner mi artículo a la venta</h2></div><button type="button" class="close" data-close="post-modal" aria-label="Cerrar publicación">×</button></div>
+      <p class="hint">Tu anuncio será visible desde otros celulares. Si activaste WhatsApp, los compradores podrán abrir el enlace de contacto. Acuerda entregas en un lugar público.</p>
+      <form id="post-form" class="form">
+        <div class="field"><label for="post-type">¿Qué quieres hacer? *</label><select id="post-type"><option value="offer">Vender u ofrecer</option><option value="want">Busco o necesito</option></select></div>
+        <div class="field"><label for="post-name">Nombre del artículo *</label><input id="post-name" maxlength="65" required placeholder="Ej. Calculadora científica"></div>
+        <div class="field"><label for="post-category">Categoría *</label><select id="post-category" required><option>Libros</option><option>Tecnología</option><option>Materiales</option><option>Otros</option></select></div>
+        <div class="field"><label for="post-price" id="price-label">Precio en MXN *</label><input id="post-price" type="number" min="0" max="100000" step="1" required placeholder="250"><span class="hint">Pon 0 si lo regalas o quieres intercambiarlo.</span></div>
+        <div class="field" id="condition-group"><label for="post-condition">Estado del artículo</label><select id="post-condition"><option>Como nuevo</option><option>Buen estado</option><option>Con detalles</option><option>Para reparar</option></select></div>
+        <div class="field"><label for="post-zone">Lugar público para encontrarse (opcional)</label><select id="post-zone"><option value="">Acordar después</option><option>Biblioteca</option><option>Explanada</option><option>Cafetería</option><option>Otro lugar público dentro del campus</option></select></div>
+        <div class="field" id="photo-group"><label for="post-image">Fotografía del artículo (opcional)</label><input id="post-image" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" capture="environment"><span class="hint">Máximo 5 MB de origen. La app comprime a JPG antes de subirla a Supabase.</span><div id="photo-preview" class="photo-preview" hidden></div></div>
+        <div class="field"><label for="post-description">Descripción *</label><textarea id="post-description" maxlength="240" placeholder="Estado del artículo y detalles" required></textarea></div>
+        <button type="submit" id="post-submit" class="btn full">Publicar en mi tianguis</button>
+      </form>
+    </div>
+  </div>
+  <div class="modal" id="seller-modal" role="dialog" aria-modal="true" aria-labelledby="seller-heading" aria-hidden="true">
+    <div class="dialog"><div class="dialog-header"><div><div class="eyebrow">Comunidad estudiantil · Independiente</div><h2 id="seller-heading">Perfil del estudiante</h2></div><button type="button" class="close" data-close="seller-modal" aria-label="Cerrar perfil público">×</button></div><div id="seller-body"></div></div>
+  </div>
+  <div class="modal" id="interest-modal" role="dialog" aria-modal="true" aria-labelledby="interest-heading" aria-hidden="true">
+    <div class="dialog"><div class="dialog-header"><div><div class="eyebrow">¡Que se arme el trato!</div><h2 id="interest-heading">Mensaje al ofertante</h2></div><button type="button" class="close" data-close="interest-modal" aria-label="Cerrar contacto">×</button></div>
+      <div class="notice" id="interest-info">Puedes copiar este mensaje o abrir WhatsApp si la persona autorizó su uso.</div>
+      <div id="interest-recap" class="card"></div>
+      <div class="field" style="margin-top:13px"><label for="interest-message">Mensaje para el vendedor</label><textarea id="interest-message" rows="4" maxlength="400"></textarea></div>
+      <a class="btn full whatsapp-action" id="interest-whatsapp" target="_blank" rel="noopener noreferrer" hidden>🟢 Abrir conversación en WhatsApp ↗</a>
+      <div style="height:9px"></div><button type="button" class="btn secondary full" id="interest-copy">Copiar mensaje</button>
+    </div>
+  </div>
+  <div id="toast" class="success-toast" role="status" aria-live="polite"></div>
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.min.js"></script>
+  <script defer src="config.js?v=20261022-1"></script>
+  <script defer src="app.js?v=20261022-1"></script>
+</body>
+</html>
